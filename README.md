@@ -16,7 +16,7 @@ Siga as instruções abaixo para utilizar o programa com eficiência.
 
 **Iniciar o Programa:**
 
-- Execute o arquivo PDFSelector.py para iniciar o programa.
+- Execute o arquivo inverter_pdf.pyw para iniciar o programa.
 
 **Selecionar Arquivo PDF:**
 
