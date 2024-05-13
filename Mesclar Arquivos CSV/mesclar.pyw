@@ -1,13 +1,14 @@
 import sys
 import os
 import csv
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QFileDialog, QLineEdit, QMessageBox
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QFileDialog, QLineEdit, QMessageBox
 
 class MesclagemWindow(QWidget):
     def __init__(self):
         super().__init__()
 
         self.setWindowTitle("Mesclar Arquivos CSV")
+        
         self.setGeometry(822, 281, 300, 100)
 
         self.setStyleSheet("background-color: black")
