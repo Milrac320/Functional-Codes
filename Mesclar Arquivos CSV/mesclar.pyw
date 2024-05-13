@@ -1,7 +1,11 @@
 import sys
 import os
 import csv
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QFileDialog, QLineEdit
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QFileDialog, QLineEdit, QMessageBox
+
+msg = QMessageBox()
+msg.setWindowTitle("Operação Concluída!")
+msg.setText("Os arquivos foram mesclados e salvos.")
 
 class MesclagemWindow(QWidget):
     def __init__(self):
@@ -92,7 +96,10 @@ class MesclagemWindow(QWidget):
         with open(arquivo_saida, 'w', newline='', encoding='latin1') as csv_saida:
             csv_writer = csv.writer(csv_saida, delimiter=';')
             csv_writer.writerows(saida_mesclada)
-            print("Os arquivos foram mesclados!")
+            msg = QMessageBox()
+            msg.setWindowTitle("Operação Concluída!")
+            msg.setText("Os arquivos foram mesclados e salvos.")
+            msg.exec_()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
