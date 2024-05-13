@@ -3,10 +3,6 @@ import os
 import csv
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QFileDialog, QLineEdit, QMessageBox
 
-msg = QMessageBox()
-msg.setWindowTitle("Operação Concluída!")
-msg.setText("Os arquivos foram mesclados e salvos.")
-
 class MesclagemWindow(QWidget):
     def __init__(self):
         super().__init__()
