@@ -72,8 +72,7 @@ class PDFExtractor(QWidget):
 
     def select_pdf(self):
         file_path, _ = QFileDialog.getOpenFileName(self, "Selecionar PDF", "", "Arquivos PDF (*.pdf)")
-        if file_path:
-            self.file_path.setText(file_path)
+        self.file_path.setText(file_path) if file_path else None   
 
     def extract_keywords(self):
         pdf_file = self.file_path.text()
@@ -100,8 +99,8 @@ class PDFExtractor(QWidget):
                     for keyword in keywords:
                         if keyword in page_text:
                             for line in page_text.split('\n'):
-                                if keyword in line:
-                                    rows.append([keyword, f"Page {page_num}", line])
+                                rows.append([keyword, f"Page {page_num}", line]) if keyword in line else None
+                                    
             self.save_to_excel(pdf_file, rows)
         except Exception as e:
             self.show_message("Erro", f"Erro ao processar o PDF: {str(e)}", QMessageBox.Critical)
